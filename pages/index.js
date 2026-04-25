@@ -64,6 +64,40 @@ const gallery = [
   },
 ];
 
+const packages = [
+  {
+    name: "Paket Basic",
+    price: "Mulai dari 2 Juta",
+    features: [
+      "Konsultasi desain",
+      "Pembuatan desain 2D",
+      "Estimasi RAB sederhana",
+    ],
+  },
+  {
+    name: "Paket Standard",
+    price: "Mulai dari 5 Juta",
+    features: [
+      "Desain 2D & 3D",
+      "Perencanaan struktur",
+      "RAB detail & transparan",
+      "Pendampingan proyek",
+    ],
+    highlight: true,
+  },
+  {
+    name: "Paket Premium",
+    price: "Mulai dari 10 Juta",
+    features: [
+      "Desain lengkap + revisi",
+      "Perencanaan struktur full",
+      "RAB lengkap + timeline",
+      "Pembangunan hingga finishing",
+      "Quality control & maintenance",
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -228,6 +262,40 @@ export default function Home() {
               </div>
             </div>
 
+            <section className="pricing-section">
+              <h2>Paket Harga Renovasi</h2>
+              <p className="section-subtitle">
+                Pilih paket sesuai kebutuhan dan budget Anda
+              </p>
+
+              <div className="pricing-grid">
+                {packages.map((item, index) => (
+                  <div
+                    className={`pricing-card ${item.highlight ? "highlight" : ""}`}
+                    key={index}
+                  >
+                    <h3>{item.name}</h3>
+                    <p className="price">{item.price}</p>
+
+                    <ul>
+                      {item.features.map((feature, i) => (
+                        <li key={i}>✔ {feature}</li>
+                      ))}
+                    </ul>
+
+                    <a
+                      className="button secondary-cta"
+                      href={whatsappLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Pilih Paket
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             <div className="benefits-container" id="kenapa">
               <h3>Kenapa Pilih Kami?</h3>
               <div className="benefits-grid">
@@ -307,6 +375,24 @@ export default function Home() {
                   </div>
                 </article>
               ))}
+            </div>
+          </section>
+
+          {/* GOOGLE MAPS */}
+          <section className="maps-section">
+            <h2>Lokasi Kantor Kami</h2>
+            <p>Kunjungi kantor kami atau lihat lokasi di peta</p>
+
+            <div className="maps-container">
+              <iframe
+                src="https://www.google.com/maps?q=-6.4100290074511515,107.0493920270998&z=15&output=embed"
+                width="100%"
+                height="400"
+                style={{ border: 0, borderRadius: "16px" }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </section>
 
