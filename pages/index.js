@@ -36,7 +36,7 @@ export default function Home() {
           content="Konsultasi gratis renovasi rumah sekarang."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/hero.png" />
+        <meta property="og:image" content="/images/hero.webp" />
 
         {/* Schema */}
         <script
@@ -107,7 +107,7 @@ export default function Home() {
 
             <div className="hero-image">
               <Image
-                src="/images/hero.png"
+                src="/images/hero.webp"
                 alt="Rumah modern hasil renovasi"
                 fill
                 className="hero-img"
@@ -126,7 +126,7 @@ export default function Home() {
             <div className="gallery-grid">
               <div className="gallery-card">
                 <Image
-                  src="/images/img-1.png"
+                  src="/images/img-1.webp"
                   alt="Ruang tamu modern minimalis"
                   width={500}
                   height={300}
@@ -137,7 +137,7 @@ export default function Home() {
 
               <div className="gallery-card">
                 <Image
-                  src="/images/img-2.png"
+                  src="/images/img-2.webp"
                   alt="Kamar tidur nyaman"
                   width={500}
                   height={300}
@@ -148,7 +148,7 @@ export default function Home() {
 
               <div className="gallery-card">
                 <Image
-                  src="/images/img-3.png"
+                  src="/images/img-3.webp"
                   alt="Dapur modern fungsional"
                   width={500}
                   height={300}
