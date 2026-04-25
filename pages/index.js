@@ -1,17 +1,68 @@
 import Image from "next/image";
 import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
+import {
   faPenRuler,
   faBuilding,
   faCalculator,
   faHouse,
   faScrewdriverWrench,
-  faCouch
+  faCouch,
 } from "@fortawesome/free-solid-svg-icons";
 
 const message = "Halo Kita Renovin, saya tertarik untuk renovasi.";
 const whatsappLink = `https://wa.me/6281563817446?text=${encodeURIComponent(message)}`;
+
+const services = [
+  {
+    icon: faPenRuler,
+    title: "Jasa Pembuatan Desain",
+    desc: "Desain arsitektur sesuai kebutuhan dengan konsep estetis dan fungsional",
+  },
+  {
+    icon: faBuilding,
+    title: "Jasa Perencanaan Struktur",
+    desc: "Perencanaan struktur bangunan yang kuat, aman, dan sesuai standar",
+  },
+  {
+    icon: faCalculator,
+    title: "Jasa Perhitungan RAB",
+    desc: "Estimasi biaya pembangunan secara detail, transparan, dan terukur",
+  },
+  {
+    icon: faHouse,
+    title: "Jasa Pembangunan Rumah",
+    desc: "Pembangunan rumah dari nol hingga siap huni dengan kualitas terbaik",
+  },
+  {
+    icon: faScrewdriverWrench,
+    title: "Jasa Pemeliharaan",
+    desc: "Layanan perawatan rutin untuk menjaga kondisi bangunan tetap optimal",
+  },
+  {
+    icon: faCouch,
+    title: "Jasa Interior",
+    desc: "Penataan interior modern yang nyaman dan sesuai gaya Anda",
+  },
+];
+
+const gallery = [
+  {
+    img: "/images/img-1.webp",
+    title: "Ruang Tamu Modern",
+    desc: "Konsep minimalis dengan warna cerah dan elegan.",
+  },
+  {
+    img: "/images/img-2.webp",
+    title: "Kamar Tidur Nyaman",
+    desc: "Pencahayaan alami dan desain yang bikin rileks.",
+  },
+  {
+    img: "/images/img-3.webp",
+    title: "Dapur Fungsional",
+    desc: "Layout optimal dengan peralatan modern.",
+  },
+];
 
 export default function Home() {
   return (
@@ -124,38 +175,18 @@ export default function Home() {
             <p className="section-subtitle">Hasil renovasi terbaik kami</p>
 
             <div className="gallery-grid">
-              <div className="gallery-card">
-                <Image
-                  src="/images/img-1.webp"
-                  alt="Ruang tamu modern minimalis"
-                  width={500}
-                  height={300}
-                />
-                <h3>Ruang Tamu Modern</h3>
-                <p>Konsep minimalis dengan warna cerah dan elegan.</p>
-              </div>
-
-              <div className="gallery-card">
-                <Image
-                  src="/images/img-2.webp"
-                  alt="Kamar tidur nyaman"
-                  width={500}
-                  height={300}
-                />
-                <h3>Kamar Tidur Nyaman</h3>
-                <p>Pencahayaan alami dan desain yang bikin rileks.</p>
-              </div>
-
-              <div className="gallery-card">
-                <Image
-                  src="/images/img-3.webp"
-                  alt="Dapur modern fungsional"
-                  width={500}
-                  height={300}
-                />
-                <h3>Dapur Fungsional</h3>
-                <p>Layout optimal dengan peralatan modern.</p>
-              </div>
+              {gallery.map((item, index) => (
+                <div className="gallery-card" key={index}>
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    width={500}
+                    height={300}
+                  />
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
             </div>
 
             {/* CTA kecil */}
@@ -185,70 +216,15 @@ export default function Home() {
             <div className="services-container">
               <h3>Layanan Kami</h3>
               <div className="services-grid">
-                <div className="service-card">
-                  <div className="service-icon">
-                    <FontAwesomeIcon icon={faPenRuler} />
+                {services.map((item, index) => (
+                  <div className="service-card" key={index}>
+                    <div className="service-icon">
+                      <FontAwesomeIcon icon={item.icon} />
+                    </div>
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
                   </div>
-                  <h4>Jasa Pembuatan Desain</h4>
-                  <p>
-                    Desain arsitektur sesuai kebutuhan dengan konsep estetis dan
-                    fungsional
-                  </p>
-                </div>
-
-                <div className="service-card">
-                  <div className="service-icon">
-                    <FontAwesomeIcon icon={faBuilding} />
-                  </div>
-                  <h4>Jasa Perencanaan Struktur</h4>
-                  <p>
-                    Perencanaan struktur bangunan yang kuat, aman, dan sesuai
-                    standar
-                  </p>
-                </div>
-
-                <div className="service-card">
-                  <div className="service-icon">
-                    <FontAwesomeIcon icon={faCalculator} />
-                  </div>
-                  <h4>Jasa Perhitungan RAB</h4>
-                  <p>
-                    Estimasi biaya pembangunan secara detail, transparan, dan
-                    terukur
-                  </p>
-                </div>
-
-                <div className="service-card">
-                  <div className="service-icon">
-                    <FontAwesomeIcon icon={faHouse} />
-                  </div>
-                  <h4>Jasa Pembangunan Rumah</h4>
-                  <p>
-                    Pembangunan rumah dari nol hingga siap huni dengan kualitas
-                    terbaik
-                  </p>
-                </div>
-
-                <div className="service-card">
-                  <div className="service-icon">
-                    <FontAwesomeIcon icon={faScrewdriverWrench} />
-                  </div>
-                  <h4>Jasa Pemeliharaan</h4>
-                  <p>
-                    Layanan perawatan rutin untuk menjaga kondisi bangunan tetap
-                    optimal
-                  </p>
-                </div>
-
-                <div className="service-card">
-                  <div className="service-icon">
-                    <FontAwesomeIcon icon={faCouch} />
-                  </div>
-                  <h4>Jasa Interior</h4>
-                  <p>
-                    Penataan interior modern yang nyaman dan sesuai gaya Anda
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
 
