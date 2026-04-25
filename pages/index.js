@@ -1,15 +1,13 @@
 import Image from "next/image";
 import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faPan,
-  faBed,
-  faWrench,
-  faSparkles,
-  faPalette,
-  faBowlFood,
-  faChair,
+import { 
+  faPenRuler,
+  faBuilding,
+  faCalculator,
+  faHouse,
+  faScrewdriverWrench,
+  faCouch
 } from "@fortawesome/free-solid-svg-icons";
 
 const message = "Halo Kita Renovin, saya tertarik untuk renovasi.";
@@ -189,45 +187,67 @@ export default function Home() {
               <div className="services-grid">
                 <div className="service-card">
                   <div className="service-icon">
-                    <FontAwesomeIcon icon={faHome} />
+                    <FontAwesomeIcon icon={faPenRuler} />
                   </div>
-                  <h4>Renovasi Total</h4>
-                  <p>Transformasi rumah lengkap dari konsep hingga finishing</p>
+                  <h4>Jasa Pembuatan Desain</h4>
+                  <p>
+                    Desain arsitektur sesuai kebutuhan dengan konsep estetis dan
+                    fungsional
+                  </p>
                 </div>
+
                 <div className="service-card">
                   <div className="service-icon">
-                    <FontAwesomeIcon icon={faBowlFood} />
+                    <FontAwesomeIcon icon={faBuilding} />
                   </div>
-                  <h4>Renovasi Dapur</h4>
-                  <p>Dapur modern dengan layout fungsional dan efisien</p>
+                  <h4>Jasa Perencanaan Struktur</h4>
+                  <p>
+                    Perencanaan struktur bangunan yang kuat, aman, dan sesuai
+                    standar
+                  </p>
                 </div>
+
                 <div className="service-card">
                   <div className="service-icon">
-                    <FontAwesomeIcon icon={faBed} />
+                    <FontAwesomeIcon icon={faCalculator} />
                   </div>
-                  <h4>Renovasi Kamar</h4>
-                  <p>Desain kamar nyaman dengan pencahayaan optimal</p>
+                  <h4>Jasa Perhitungan RAB</h4>
+                  <p>
+                    Estimasi biaya pembangunan secara detail, transparan, dan
+                    terukur
+                  </p>
                 </div>
+
                 <div className="service-card">
                   <div className="service-icon">
-                    <FontAwesomeIcon icon={faWrench} />
+                    <FontAwesomeIcon icon={faHouse} />
                   </div>
-                  <h4>Perbaikan Atap</h4>
-                  <p>Solusi cepat untuk atap bocor dan rusak</p>
+                  <h4>Jasa Pembangunan Rumah</h4>
+                  <p>
+                    Pembangunan rumah dari nol hingga siap huni dengan kualitas
+                    terbaik
+                  </p>
                 </div>
+
                 <div className="service-card">
                   <div className="service-icon">
-                    <FontAwesomeIcon icon={faChair} />
+                    <FontAwesomeIcon icon={faScrewdriverWrench} />
                   </div>
-                  <h4>Desain Interior</h4>
-                  <p>Konsep minimalis dan modern sesuai preferensi Anda</p>
+                  <h4>Jasa Pemeliharaan</h4>
+                  <p>
+                    Layanan perawatan rutin untuk menjaga kondisi bangunan tetap
+                    optimal
+                  </p>
                 </div>
+
                 <div className="service-card">
                   <div className="service-icon">
-                    <FontAwesomeIcon icon={faPalette} />
+                    <FontAwesomeIcon icon={faCouch} />
                   </div>
-                  <h4>Finishing Detail</h4>
-                  <p>Detail finishing sempurna untuk hasil yang memuaskan</p>
+                  <h4>Jasa Interior</h4>
+                  <p>
+                    Penataan interior modern yang nyaman dan sesuai gaya Anda
+                  </p>
                 </div>
               </div>
             </div>
